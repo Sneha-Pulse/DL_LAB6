@@ -1,45 +1,16 @@
-# DL_LAB6
-You are a data scientist working in a medical research institute specializing in dermatology. Skin
-cancer is a significant concern, and there's a pressing need to develop accurate and efficient
-methods for its detection. Deep learning models have shown promising results in automating this
-process, particularly convolutional neural networks (CNNs). Your task is to conduct a
-comparative study between two architectures: VGG16 or VGG19 and a custom CNN model
-specifically designed for skin cancer detection.You are provided with a dataset containing
-thousands of dermatoscopic images, each labeled as benign or malignant based on clinical
-diagnosis. Before diving into model development, you need to preprocess the data to ensure
-consistency and enhance its diversity. This includes standardizing image sizes, normalizing pixel
-values, and applying augmentation techniques like rotation, flipping, and scaling.
+ CNN, or Convolutional Neural Network, is a type of deep learning architecture that's particularly effective for analyzing visual imagery. CNNs are designed to automatically and adaptively learn spatial hierarchies of features from images. A typical CNN architecture consists of three main types of layers: convolutional layers, pooling layers, and fully connected layers.
 
-1. Data Preprocessing:
-- Standardize image sizes and normalize pixel values.
-- Apply augmentation techniques to increase data diversity.
-  
-2. Model Architectures:
--VGG16 or VGG19
-- Custom CNN: Designed specifically for skin cancer detection, this model comprises:
-- Four convolutional layers with increasing filter sizes (32, 64, 128, 256) and ReLU activation.
-- Max pooling layers after each convolutional layer.
-- Two dense layers with 512 neurons each, followed by a dropout layer (dropout rate: 0.5).
-- Output layer with 1 neuron and sigmoid activation for binary classification.
+VGG16 and VGG19 are two specific CNN architectures introduced by Karen Simonyan and Andrew Zisserman in their 2014 paper "Very Deep Convolutional Networks for Large-Scale Image Recognition." They are named VGG16 and VGG19 because of the number of layers in these models.
 
-3. Training:
-- Split the dataset into training, validation, and test sets.
-- For VGG models, employ transfer learning by initializing with pre-trained ImageNet weights
-and fine-tuning only the fully connected layers.
-- Train the custom CNN model from scratch.
-- - Use appropriate optimization algorithms (e.g., SGD, Adam) and monitor performance on the
-validation set for early stopping.
+VGG16 Model:
+- It has 16 layers with learnable parameters.
+- This model introduced the concept of using small (3x3) filters with a stride of 1 and padding of 1 across multiple layers to gain greater depth in the network.
+- VGG16 consists of 13 convolutional layers, 5 max-pooling layers, and 3 fully connected layers.
 
-4. Evaluation:
-- Evaluate the trained models on the test set.
-- Calculate metrics including accuracy, precision, recall, and F1-score.
-- Visualize model predictions and analyze misclassifications.
-  
-4.Comparison:
-● Visualize loss and accuracy curves during training for both architectures to analyze
-convergence patterns.
-● Compare traditional metrics (accuracy, precision, recall, F1-score,ROC-AUC, specificity)
-between VGG and custom CNN models.
-● Present ROC curves and confusion matrices to compare classification performance and
-error patterns.
+VGG19 Model:
+- It has 19 layers with learnable parameters.
+- It has the same architecture as VGG16, except that one additional convolutional layer is added to the stack of convolutions in some of the blocks.
+- This model is slightly deeper, with 3 more layers of convolutions compared to VGG16.
+- VGG19 consists of 16 convolutional layers, 5 max-pooling layers, and 3 fully connected layers.
 
+Both VGG16 and VGG19 models achieved impressive results on the ImageNet Large Scale Visual Recognition Challenge (ILSVRC) by significantly improving the top-5 error rates for image classification tasks. However, due to their depth, computational resources required for these models are significant.  
